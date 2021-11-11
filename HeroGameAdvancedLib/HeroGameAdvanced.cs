@@ -52,7 +52,6 @@ namespace HeroGameAdvancedLib {
         public Dice (int min, int max) {
             this.Min = min;
             this.Max = max;
-            
         }
 
         // Roll returns an integer between Min and Max inclusive
