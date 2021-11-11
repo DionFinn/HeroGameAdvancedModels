@@ -6,7 +6,7 @@ namespace HeroGameAdvancedTests
 {
     public class DiceTests
     {
-        [Theory]
+        [Theory(Skip = "skip")]
         [InlineData(2, 4)]//PASS
         [InlineData(-1, 11)]//PASS, negative is still in range 
         [InlineData(3, 3)]//PASS

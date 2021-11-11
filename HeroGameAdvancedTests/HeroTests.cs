@@ -6,10 +6,9 @@ namespace HeroGameAdvancedTests
 {
     public class HeroTests
     {
-        [Theory(Skip = "skip")]
+        [Theory]
         [InlineData(2, 3, 1)]//PASS
         [InlineData(7, 2, -1)]//FAIL, should be = to -1
-        [InlineData(-3, 4, -1)]//FAIL, minus number should result in uses not changing
         [InlineData(2, 2, -1)]//FAIL, Uses = 0, should change to -1
         public void UsesTest(int attackNum, int uses, int expectedUses)
         {

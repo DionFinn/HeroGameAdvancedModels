@@ -17,11 +17,16 @@ namespace HeroGameAdvancedLib {
         // Hero is able to attack a given number of times.  Each time a hero attacks subtract 1 from Uses
         // timesToAttack is greater that the number of Uses should return -1 and not subtract from Uses.
         public int Attack(int timesToAttack) {
-            this.Uses -= timesToAttack;
+            if(timesToAttack >= this.Uses){
+                this.Uses = -1;
+            }
+            
+            else{
+                 this.Uses -= timesToAttack;
+            }
+           
             return this.Dice.Roll() * timesToAttack;
         }
-
-        
     }
 
     public class Villain {
@@ -39,7 +44,7 @@ namespace HeroGameAdvancedLib {
         // if damage is greater that Hitpoints, Hitpoints should be set to 0 (zero)
         public void Damage(int amount) {
             this.Hitpoints -= amount;
-            if (this.Hitpoints < 0)
+            if (this.Hitpoints <= 0)
                 this.Hitpoints = 0; 
         }
     }
